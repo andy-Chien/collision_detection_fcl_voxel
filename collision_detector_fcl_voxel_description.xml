@@ -1,0 +1,7 @@
+<library path="libcollision_detector_fcl_voxel_plugin">
+  <class name="FCL_VOXEL" type="collision_detection::CollisionDetectorFCLVoxelPluginLoader" base_class_type="collision_detection::CollisionPlugin">
+    <description>
+      Voxel Collision Detector, default for MoveIt test.
+    </description>
+  </class>
+</library>

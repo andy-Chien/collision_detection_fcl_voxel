@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>collision_detection_fcl_voxel</name>
+  <version>1.2.5</version>
+  <description>The fcl based collision detefton package</description>
+  
+  <author>Andy Chien</author>
+  <maintainer email="r960411@gmail.com"/>
+  
+  <license>CDDL</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend>geometric_shapes</build_depend>moveit_core
+  <build_depend>moveit_core</build_depend>
+  <exec_depend>geometric_shapes</exec_depend>
+  <exec_depend>eigen_stl_containers</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>kdl_parser</exec_depend>
+  <exec_depend>moveit_core</exec_depend>
+  <exec_depend>xmlrpcpp</exec_depend>
+  <export>
+    <moveit_core plugin="${prefix}/collision_detector_fcl_voxel_description.xml"/>
+  </export>
+</package>
