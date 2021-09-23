@@ -158,7 +158,6 @@ void CollisionWorldFCLVoxel::checkRobotCollisionHelper(const CollisionRequest& r
   }
   ros::Time end = ros::Time::now();
   std::cout << "times = " << check_time << ", check collisions spend " << (end - begin).toSec() * 1000 << "ms" <<std::endl;
-  std::cout<<"getJointVelocities = "<<*state.getJointVelocities(state.getVariableNames()[1])<<", "<<req.distance<<", "<<req.cost<<", "<<req.contacts<<", "<<req.max_contacts<<", "<<req.max_contacts_per_pair<<", "<<req.max_cost_sources<<", "<<req.max_cost_sources<<", "<<req.min_cost_density<<", "<<req.verbose<<std::endl;
 }
 
 void CollisionWorldFCLVoxel::checkWorldCollision(const CollisionRequest& req, CollisionResult& res,
