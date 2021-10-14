@@ -23,7 +23,6 @@ find_package(CUDA REQUIRED)
 find_package(icl_core REQUIRED )
 find_package(gpu_voxels REQUIRED)
 find_package(Eigen3 REQUIRED)
-find_package(Boost REQUIRED system filesystem date_time thread)
 
 find_package(fcl QUIET)
 if (fcl_FOUND)
