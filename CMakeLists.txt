@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.1.3)
 project(collision_detection_fcl_voxel)
 set(MOVEIT_LIB_NAME moveit_collision_detection_fcl_voxel)
+list(APPEND CMAKE_PREFIX_PATH "~/libgvl")
 
 find_package(catkin REQUIRED
   COMPONENTS
@@ -47,6 +48,7 @@ find_package(urdfdom REQUIRED)
 find_package(urdfdom_headers REQUIRED)
 
 message(STATUS "GVL include dirs are: ${gpu_voxels_INCLUDE_DIRS}")
+message(STATUS "icl include dirs are: ${icl_core_INCLUDE_DIRS}")
 
 set(THIS_PACKAGE_INCLUDE_DIRS
     #doc/interactivity/include
@@ -82,7 +84,9 @@ add_definitions(
   ${icl_core_DEFINITIONS}
   ${gpu_voxels_DEFINITIONS}
 )
-message("icl_core_DEFINITIONS ${icl_core_DEFINITIONS}")
+message("================ icl_core_DEFINITIONS ${icl_core_DEFINITIONS} ===================")
+message("================ icl_core_LIBRARIES  ${icl_core_LIBRARIES} ================")
+
 
 include_directories(
   ${THIS_PACKAGE_INCLUDE_DIRS} 
@@ -90,6 +94,7 @@ include_directories(
   PUBLIC ${Boost_INCLUDE_DIR} 
   PUBLIC ${EIGEN3_INCLUDE_DIRS}
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}
+  PUBLIC ${icl_core_INCLUDE_DIRS}
   PUBLIC ${gpu_voxels_INCLUDE_DIRS}
   PUBLIC ${CUDA_INCLUDE_DIRS}
 )
@@ -136,7 +141,7 @@ install(TARGETS ${MOVEIT_LIB_NAME} collision_detector_fcl_voxel_plugin
 
 install(DIRECTORY include/ DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION})
 
-install(FILES ./collision_detector_fcl_voxel_description.xml DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(FILES collision_detector_fcl_voxel_description.xml DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
 if(CATKIN_ENABLE_TESTING)
   catkin_add_gtest(test_fcl_collision_detection test/test_fcl_collision_detection.cpp)
