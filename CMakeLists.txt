@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.1.3)
 project(collision_detection_fcl_voxel)
 set(MOVEIT_LIB_NAME moveit_collision_detection_fcl_voxel)
-list(APPEND CMAKE_PREFIX_PATH "~/libgvl")
+list(APPEND CMAKE_PREFIX_PATH "/usr/local/libgvl")
 
 find_package(catkin REQUIRED
   COMPONENTS
